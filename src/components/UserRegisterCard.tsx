@@ -15,7 +15,7 @@ export default function UserRegisterCard(registrant: Registrant) {
       <span>{registrant.total.toLocaleString()} THB</span>
     </div>
 
-    <div className="text-muted">
+    <div className="text-muted small">
       { registrant.plan}
       { registrant.gender === "male" ? " · 👨 Male" : " · 👩 Female" }
     </div>

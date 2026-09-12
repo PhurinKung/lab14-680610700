@@ -136,16 +136,8 @@ export default function ModalRegister({ onClose }: { onClose: () => void }) {
 };
 
   return (
-    // <div
-    //   className="modal fade show"
-    //   id="modalregister"
-    //   data-bs-backdrop="static"
-    //   data-bs-keyboard="false"
-    //   tabIndex={-1}
-    //   aria-labelledby="modalregisterLabel"
-    //   aria-hidden="true"
-    // >
-      <div className="modal fade show d-block" tabIndex={-1} role="dialog">
+    <>
+      <div className="modal fade show d-block" tabIndex={-1} role="dialog" >
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
@@ -281,7 +273,8 @@ export default function ModalRegister({ onClose }: { onClose: () => void }) {
           </div>
         </div>
       </div>
-      <div className="modal-backdrop fade show"></div>
     </div>
+    <div className="modal-backdrop fade show"></div>
+    </>
   );
 }

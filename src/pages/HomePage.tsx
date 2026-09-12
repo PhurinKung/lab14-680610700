@@ -13,8 +13,8 @@ export default function HomePage() {
         <button
           type="button"
           className="m-4 btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#modalregister"
+          // data-bs-toggle="modal"
+          // data-bs-target="#modalregister"
           onClick={() => setShowModal(true)}
         >
           Register

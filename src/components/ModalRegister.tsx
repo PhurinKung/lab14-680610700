@@ -246,10 +246,10 @@ export default function ModalRegister({ onClose }: { onClose: () => void }) {
               <span className="text-success d-block">(20% Discounted)</span>
             </div>
 
+             */}
             <div className="alert alert-primary mt-3" role="alert">
               Promotion📢 Buy all items to get 20% Discount
-            </div> */}
-
+            </div>
             <div>Total Payment : {computeTotalPayment().toLocaleString()} THB</div>
           </div>
 

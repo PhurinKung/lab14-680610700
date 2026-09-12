@@ -21,7 +21,7 @@ export default function UserRegisterCard(registrant: Registrant) {
     </div>
 
     <div className="mt-1 d-flex flex-wrap gap-1">
-      {registrant.items.map((itemId) => {
+      {registrant.items.map((itemId: string) => {
           // Find the matching item from the extraItems array to get the label
           const itemDef = extraItems.find((item) => item.id === itemId);
           if (!itemDef) return null;

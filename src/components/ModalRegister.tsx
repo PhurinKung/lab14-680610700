@@ -35,7 +35,7 @@ function loadData(): Registrant[] {
   }
 }
 
-export default function ModalRegister() {
+export default function ModalRegister({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState<RegisterForm>({
     fname: "",
     lname: "",
@@ -101,18 +101,19 @@ export default function ModalRegister() {
       if(item) costExtraItem+= item.price;
     });
 
-    if (selectedItems.length === 3) {
-      costExtraItem = costExtraItem * 0.8;
-    }
-
+    
     return costExtraItem;
   };
-
+  
   const computeTotalPayment = () => {
     let total = 0;
     const selectedPlan = plans.find((p) => p.id === form.plan);
     if (selectedPlan) total += selectedPlan.price;
-    return total + computeExtraItems();
+    total+=computeExtraItems();
+    if (selectedItems.length === 3) {
+      total*=0.8;
+    }
+    return total;
   };
 
   const registerBtnOnClick = () => {
@@ -136,13 +137,13 @@ export default function ModalRegister() {
 
   return (
     <div
-    className="modal fade"
-    id="modalregister"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-      tabIndex={-1}
-      aria-labelledby="modalregisterLabel"
-      aria-hidden="true"
+      className="modal fade show d-block" tabIndex={-1} role="dialog"
+      // id="modalregister"
+      // data-bs-backdrop="static"
+      // data-bs-keyboard="false"
+      // tabIndex={-1}
+      // aria-labelledby="modalregisterLabel"
+      // aria-hidden="true"
     >
       <div className="modal-dialog">
         <div className="modal-content">
@@ -151,8 +152,9 @@ export default function ModalRegister() {
             <button
               type="button"
               className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
+              // data-bs-dismiss="modal"
+              // aria-label="Close"
+              onClick={onClose}
             ></button>
           </div>
 
@@ -274,9 +276,11 @@ export default function ModalRegister() {
             >
               Register
             </button>
+
           </div>
         </div>
       </div>
+      <div className="modal-backdrop fade show"></div>
     </div>
   );
 }

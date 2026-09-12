@@ -15,13 +15,13 @@ export default function HomePage() {
           className="m-4 btn btn-primary"
           data-bs-toggle="modal"
           data-bs-target="#modalregister"
-          // onClick={() => setShowModal(true)}
+          onClick={() => setShowModal(true)}
         >
           Register
         </button>
       </div>
-      <ModalRegister/>
-      {/* {  showModal && <ModalRegister onClose={() => setShowModal(false)} /> } */}
+      
+      {  showModal && <ModalRegister onClose={() => setShowModal(false)} /> }
     </div>
   );
 }

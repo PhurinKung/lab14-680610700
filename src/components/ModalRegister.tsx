@@ -250,7 +250,7 @@ export default function ModalRegister({ onClose }: { onClose: () => void }) {
               Promotion📢 Buy all items to get 20% Discount
             </div> */}
 
-            <div>Total Payment : {computeTotalPayment()} THB</div>
+            <div>Total Payment : {computeTotalPayment().toLocaleString()} THB</div>
           </div>
 
           <div className="modal-footer">
